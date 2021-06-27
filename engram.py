@@ -26,7 +26,7 @@ def build_engram(forward, tokens, shift=10000, factor=20000, rampdown=lambda x:x
     """
 
     # get hidden states
-    h = list(forward(input_ids=tokens[:, -512:].long().cuda(), output_hidden_states=True).hidden_states[1:])
+    h = list(forward(input_ids=tokens[:, -320:].long().cuda(), output_hidden_states=True).hidden_states[1:])
 
     # todo: use rampdown
     f = 0
